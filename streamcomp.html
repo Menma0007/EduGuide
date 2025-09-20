@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stream Comparison Tools | EduGuide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+     --primary: #6b4226;
+  --secondary: #8d6e63;
+  --accent: #d97706;
+  --bg: #fdfaf6;
+  --card: #fff8f0;
+  --text: #2e2a27;
+  --muted: #7a6f67;
+  --button-bg: var(--accent);
+  --button-tx: #fff;
+  --input-bg: var(--card);
+  --input-tx: var(--text);
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-dark: rgba(0, 0, 0, 0.18);
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      transition: background 0.4s, color 0.4s;
+    }
+    header {
+      padding: 2.2rem 1rem 2rem 1rem;
+      background: linear-gradient(120deg, var(--secondary), var(--primary));
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 4px 12px #1112;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+    }
+    header h1 { font-size: 2.6rem; letter-spacing: 1px; margin: 0 0 0.5rem 0; }
+    header p { margin: 0; font-size: 1.18rem; color: #eaeaea; }
+    .container {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      background: var(--card);
+      margin-bottom: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 32px #c9c0bb;
+      padding: 2rem;
+      transition: background 0.3s;
+    }
+    h2 {
+      color: #987654;
+      margin-top: 0;
+      margin-bottom: 1.6rem;
+      font-size: 2rem;
+    }
+    table {
+      table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      color: var(--text);
+      font-size: 1rem;
+      border-radius: 12px;
+      overflow: hidden; 
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+    th, td {
+      padding: 1rem 0.7rem;
+      text-align: left;
+      border-bottom: 1px solid #363a63;
+    }
+    th {
+      background: #a0785a;
+      color: var(--accent);
+      font-size: 1.15rem;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tr:hover td {
+      background: #f5f5f5;
+    }
+    .backlink {
+      display: inline-block;
+      margin-bottom: 1.6rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      background: #262853;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 6px #0002;
+      transition: background 0.2s;
+    }
+    .backlink:hover {
+      background: var(--accent);
+      color: #111a23;
+      text-decoration: none;
+    }
+    footer {
+      background: #987654;
+      padding: 1.2rem 1rem;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: .08em;
+      margin-top: 3rem;
+      border-radius: 18px 18px 0 0;
+      font-size: 1rem;
+    }
+    @media (max-width: 800px) {
+      table, thead, tbody, th, td, tr { display: block; }
+      th {
+        position: sticky; top: 0; z-index: 1;
+      }
+      tr { margin-bottom: 1.2em; }
+      th, td {
+        border: none;
+        padding: 0.7em 0.8em;
+      }
+      td {
+        background: #272862;
+        margin-bottom: 0.3em;
+      }
+      td::before {
+        content: attr(data-label) ": ";
+        font-weight: bold;
+        color: var(--accent);
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EduGuide</h1>
+    <p>Stream Comparison Tools</p>
+  </header>
+  <div class="container">
+    <a class="backlink" href="index.html">&larr; Back to Home</a>
+    <section>
+      <h2>Compare Streams: Arts, Science, Commerce, Vocational</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Stream</th>
+            <th>Ideal For</th>
+            <th>Popular Subjects</th>
+            <th>Career Examples</th>
+            <th>Degree Paths</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Stream">Arts</td>
+            <td data-label="Ideal For">Creative, expressive, analytical, social</td>
+            <td data-label="Popular Subjects">History, Psychology, Literature, Political Science, Journalism</td>
+            <td data-label="Career Examples">Designer, Writer, Civil Services, Journalism, Social Work</td>
+            <td data-label="Degree Paths">B.A., B.F.A., BSW, B.Ed.</td>
+          </tr>
+          <tr>
+            <td data-label="Stream">Science</td>
+            <td data-label="Ideal For">Analytical, problem-solver, scientific, detail-oriented</td>
+            <td data-label="Popular Subjects">Physics, Chemistry, Biology, Maths, Computer Science</td>
+            <td data-label="Career Examples">Doctor, Engineer, Scientist, IT Professional, Researcher</td>
+            <td data-label="Degree Paths">B.Sc., MBBS, B.Tech, BCA</td>
+          </tr>
+          <tr>
+            <td data-label="Stream">Commerce</td>
+            <td data-label="Ideal For">Business-oriented, analytical, entrepreneurial</td>
+            <td data-label="Popular Subjects">Accountancy, Business Studies, Economics, Maths, Finance</td>
+            <td data-label="Career Examples">Accountant, Banker, CA, Business Analyst, Entrepreneur</td>
+            <td data-label="Degree Paths">B.Com., BBA, CA, CS</td>
+          </tr>
+          <tr>
+            <td data-label="Stream">Vocational</td>
+            <td data-label="Ideal For">Practical, hands-on, skills-focused, creative</td>
+            <td data-label="Popular Subjects">Retail, Hospitality, Healthcare, Agriculture, Web Design</td>
+            <td data-label="Career Examples">Chef, Technician, Technician, Healthcare Assistant, IT Support</td>
+            <td data-label="Degree Paths">B.Voc, Diploma Courses, Skill Certification</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="color:var(--muted); margin-top:.5em;">
+        Use this table to understand what each stream offers. Still confused? <a href="quiz.html" style="color:var(--accent); text-decoration:underline;">Take our quiz!</a>
+      </p>
+    </section>
+  </div>
+  <footer>
+    EduGuide © 2025 | For Students. For the Future.
+  </footer>
+</body>
+</html>

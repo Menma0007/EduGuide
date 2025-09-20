@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Govt & Private Sector Insights | EduGuide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+     --primary: #6b4226;
+  --secondary: #8d6e63;
+  --accent: #d97706;
+  --bg: #fdfaf6;
+  --card: #fff8f0;
+  --text: #2e2a27;
+  --muted: #7a6f67;
+  --button-bg: var(--accent);
+  --button-tx: #fff;
+  --input-bg: var(--card);
+  --input-tx: var(--text);
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-dark: rgba(0, 0, 0, 0.18);
+    }
+    html, body {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      transition: background 0.4s, color 0.4s;
+    }
+    header {
+      padding: 2.2rem 1rem 2rem 1rem;
+      background: linear-gradient(120deg, var(--secondary), var(--primary));
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 4px 12px #1112;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+    }
+    header h1 {
+      font-size: 2.6rem;
+      letter-spacing: 1px;
+      margin: 0 0 0.5rem 0;
+    }
+    header p {
+      margin: 0;
+      font-size: 1.18rem;
+      color: #eaeaea;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 4px 32px #24254825;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: background 0.3s;
+    }
+    h2 {
+      color: var(--primary);
+      margin-top: 0;
+      margin-bottom: 1.6rem;
+      font-size: 2rem;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      border: 1px solid #363a63;
+      padding: 1rem 1.2rem;
+      vertical-align: top;
+      text-align: left;
+    }
+    .comparison-table th {
+      background: #262853;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    tbody tr:hover td {
+      background: #f5f5f5 ;
+    }
+    .section-header {
+      background: var(--secondary);
+      color: #eee;
+      font-weight: 700;
+      text-align: center;
+      padding: 0.7rem 0;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      font-size: 1.15rem;
+      box-shadow: 0 2px 8px #0007;
+    }
+    .backlink {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      background: #262853;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 6px #0002;
+      transition: background 0.2s;
+    }
+    .backlink:hover {
+      background: var(--accent);
+      color: #111a23;
+      text-decoration: none;
+    }
+    footer {
+      background: var(--card);
+      padding: 1.2rem 1rem;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: .08em;
+      margin-top: 3rem;
+      border-radius: 18px 18px 0 0;
+      font-size: 1rem;
+    }
+    @media (max-width: 700px) {
+      .comparison-table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead tr {
+        position: absolute;
+        top: -9999px; left: -9999px;
+      }
+      tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid #363a63;
+        border-radius: 12px;
+        padding: 1rem;
+      }
+      td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+        background: #f5f5f5 ;
+        margin-bottom: 0.7rem;
+        border-radius: 8px;
+      }
+      td::before {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        width: 45%;
+        color: var(--accent);
+        font-weight: 700;
+        white-space: nowrap;
+        content: attr(data-label);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EduGuide</h1>
+    <p>Government & Private Sector Insights</p>
+  </header>
+  <div class="container">
+    <a class="backlink" href="index.html">&larr; Back to Home</a>
+    <section>
+      <h2>Educational Sector Comparison</h2>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Aspect</th>
+            <th>Government Sector</th>
+            <th>Private Sector</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Aspect">Funding</td>
+            <td data-label="Government Sector">Primarily funded by government sources and public taxes.</td>
+            <td data-label="Private Sector">Funded through tuition fees, donations, and some government aid.</td>
+          </tr>
+          <tr>
+            <td data-label="Aspect">Quality of Education</td>
+            <td data-label="Government Sector">Varies widely; many offer decent education but some struggle with infrastructure.</td>
+            <td data-label="Private Sector">Often better infrastructure, resources, and teacher qualifications.</td>
+          </tr>
+          <tr>
+            <td data-label="Aspect">Access & Affordability</td>
+            <td data-label="Government Sector">More affordable, open to all; often attract students from lower-income families.</td>
+            <td data-label="Private Sector">Higher fees limit access, mostly catering to middle and upper-income groups.</td>
+          </tr>
+          <tr>
+            <td data-label="Aspect">Teacher Quality</td>
+            <td data-label="Government Sector">Teachers are government employees with fixed pay; quality varies.</td>
+            <td data-label="Private Sector">More competitive hiring, sometimes better training and motivation.</td>
+          </tr>
+          <tr>
+            <td data-label="Aspect">Infrastructure & Facilities</td>
+            <td data-label="Government Sector">May lack adequate labs, libraries, and technology in some areas.</td>
+            <td data-label="Private Sector">Generally better infrastructure, access to digital tools and skill training.</td>
+          </tr>
+          <tr>
+            <td data-label="Aspect">Regulation & Autonomy</td>
+            <td data-label="Government Sector">Strict government regulations, limited autonomy.</td>
+            <td data-label="Private Sector">Greater autonomy in curriculum design and administration.</td>
+          </tr>
+          <tr>
+            <td data-label="Aspect">Outcomes & Perception</td>
+            <td data-label="Government Sector">Mixed performance; sometimes perceived as less effective despite notable exceptions.</td>
+            <td data-label="Private Sector">Often perceived as offering superior education, though varies widely.</td>
+          </tr>
+          <tr>
+            <td data-label="Aspect">Challenges</td>
+            <td data-label="Government Sector">Funding constraints, teacher shortages, infrastructure gaps.</td>
+            <td data-label="Private Sector">Cost barriers, profit motives, potential quality disparities.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+  <footer>
+    EduGuide © 2025 | For Students. For the Future.
+  </footer>
+</body>
+</html>

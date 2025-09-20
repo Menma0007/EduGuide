@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduGuide - Career & Education Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>EduGuide</h1>
+    <p>🎓 Your Personalized Career & Education Companion</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#quiz">📝 Aptitude Quiz</a>
+    <a href="#finder">🎯 Degree Finder</a>
+  </nav>
+
+  <div class="container">
+    <!-- Quiz Section -->
+    <section id="quiz">
+      <h2>📝 Find Your Best Stream</h2>
+      <form id="aptitudeQuiz">
+        <div class="quiz-question">
+          <div>1️⃣ Which activity do you enjoy most?</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="q1" value="Arts" required /> 🎨 Drawing, music, or reading</label>
+            <label><input type="radio" name="q1" value="Science" /> 🔬 Solving puzzles, doing experiments</label>
+            <label><input type="radio" name="q1" value="Commerce" /> 💰 Learning about money & business</label>
+            <label><input type="radio" name="q1" value="Vocational" /> 🛠 Building, repairing, or crafting things</label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <div>2️⃣ What career appeals to you most?</div>
+          <div class="quiz-options">
+            <label><input type="radio" name="q2" value="Arts" required /> ✍️ Writer / Journalist / Designer</label>
+            <label><input type="radio" name="q2" value="Science" /> 👩‍⚕️ Doctor / Engineer / Scientist</label>
+            <label><input type="radio" name="q2" value="Commerce" /> 📊 Accountant / Analyst / Banker</label>
+            <label><input type="radio" name="q2" value="Vocational" /> 🍳 Chef / Technician / Entrepreneur</label>
+          </div>
+        </div>
+
+        <div class="quiz-actions">
+          <button type="submit">🚀 Get My Stream</button>
+          <button type="button" id="resetQuiz">🔄 Reset</button>
+        </div>
+      </form>
+      <div id="quizResult" class="quiz-result" style="display:none;"></div>
+    </section>
+
+    <!-- Finder Section -->
+    <section id="finder">
+      <h2>🎯 Find Degrees & Colleges</h2>
+      <form class="finder-form" id="finderForm">
+        <label>
+          📌 Select Stream:
+          <select id="finderStream" required>
+            <option value="">-- Choose a stream --</option>
+            <option value="Arts">🎨 Arts</option>
+            <option value="Science">🔬 Science</option>
+            <option value="Commerce">💰 Commerce</option>
+            <option value="Vocational">🛠 Vocational</option>
+          </select>
+        </label>
+        <button type="submit">📂 Show Options</button>
+      </form>
+      <div id="finderResults" class="finder-results" style="display:none;"></div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    EduGuide © 2025 | 🌟 Guiding Futures
+  </footer>
+
+  <script>
+    // Aptitude Quiz Logic
+    document.getElementById('aptitudeQuiz').onsubmit = function (e) {
+      e.preventDefault();
+      let scores = { Arts: 0, Science: 0, Commerce: 0, Vocational: 0 };
+      let q1 = this.q1.value, q2 = this.q2.value;
+      scores[q1]++; scores[q2]++;
+
+      // Find the highest
+      let best = Object.keys(scores).reduce((a, b) => (scores[a] >= scores[b] ? a : b));
+      let desc = {
+        Arts: "🎨 You shine in creative and social fields! Explore BA, BFA, Mass Comm, Psychology, etc.",
+        Science: "🔬 You excel in analytical and technical thinking! Explore B.Sc, Engineering, Medicine & more.",
+        Commerce: "💰 You have business acumen! Consider B.Com, BBA, BFSI, and related fields.",
+        Vocational: "🛠 Hands-on careers excite you! Go for B.Voc, skill diplomas, hotel management etc.",
+      };
+      let resultMsg = `✅ Best-fit stream: <b>${best}</b><br/>${desc[best]}`;
+      let result = document.getElementById('quizResult');
+      result.innerHTML = resultMsg;
+      result.style.display = "block";
+    };
+
+    document.getElementById('resetQuiz').onclick = function () {
+      document.getElementById('aptitudeQuiz').reset();
+      document.getElementById('quizResult').style.display = "none";
+    };
+
+    // Degree/College Finder Logic
+    const degrees = {
+      Arts: {
+        programs: ["BA (General)", "BA Psychology", "BA History", "BA Mass Communication"],
+        colleges: ["Govt. College of Arts & Humanities", "District Women's College", "Govt. Model Degree College"],
+      },
+      Science: {
+        programs: ["B.Sc Physics", "B.Sc Chemistry", "B.Sc Maths", "B.Sc Computer Science"],
+        colleges: ["Govt. Science College", "Regional Degree College", "Jawahar Govt. College"],
+      },
+      Commerce: {
+        programs: ["B.Com (General)", "B.Com Taxation", "BBA", "B.Com Computer Applications"],
+        colleges: ["State Commerce & Management College", "Govt. City College", "Model Degree College"],
+      },
+      Vocational: {
+        programs: ["B.Voc Retail Mgmt.", "B.Voc Hospitality", "Diploma in Web Design", "Diploma in Healthcare"],
+        colleges: ["Govt. Vocational Institute", "Kisan Degree College", "Polytechnic Govt. College"],
+      },
+    };
+
+    document.getElementById('finderForm').onsubmit = function (e) {
+      e.preventDefault();
+      const stream = document.getElementById('finderStream').value;
+      if (!degrees[stream]) return;
+      let html = "";
+      html += `<div class="finder-degree">🎓 Degree Programs:</div><ul>`;
+      degrees[stream].programs.forEach((prog) => { html += `<li>${prog}</li>`; });
+      html += `</ul><div class="finder-degree">🏫 Nearby Colleges:</div><ul class="finder-colleges">`;
+      degrees[stream].colleges.forEach((col) => { html += `<li>${col}</li>`; });
+      html += "</ul>";
+      let resultDiv = document.getElementById("finderResults");
+      resultDiv.innerHTML = html;
+      resultDiv.style.display = "block";
+    };
+  </script>
+</body>
+</html>

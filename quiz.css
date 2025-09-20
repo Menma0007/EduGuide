@@ -1,0 +1,336 @@
+/* Root color variables */
+:root {
+ --primary: #6b4226;
+  --secondary: #8d6e63;
+  --accent: #d97706;
+  --bg: #fdfaf6;
+  --card: #fff8f0;
+  --text: #2e2a27;
+  --muted: #7a6f67;
+  --button-bg: var(--accent);
+  --button-tx: #fff;
+  --input-bg: var(--card);
+  --input-tx: var(--text);
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-dark: rgba(0, 0, 0, 0.18);
+
+}
+
+/* Global styles */
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+header {
+  padding: 2.5rem 1rem 2.5rem;
+  background: linear-gradient(120deg, var(--secondary), var(--primary));
+  text-align: center;
+  color: #fff;
+  border-bottom-left-radius: 48px;
+  border-bottom-right-radius: 48px;
+  box-shadow: 0 8px 20px var(--shadow-dark);
+  position: relative;
+}
+
+header h1 {
+  margin: 0 0 0.4em;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #e0e2ffcc;
+  letter-spacing: 0.05em;
+}
+
+/* Navigation */
+nav {
+  max-width: 900px;
+  margin: 2rem auto 0;
+  background-color: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px var(--shadow-dark);
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1.2rem 0;
+  user-select: none;
+}
+
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.3px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: inset 0 0 0 0 var(--accent);
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: inset 0 -3px 8px var(--accent);
+  outline: none;
+}
+
+/* Container */
+.container {
+  max-width: 930px;
+  margin: 3rem auto 4rem;
+  padding: 0 1.2rem;
+}
+
+/* Sections */
+section {
+  background-color: var(--card);
+  margin-bottom: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px var(--shadow-dark);
+  padding: 2.5rem 3rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Section headings */
+h2 {
+  color: var(--primary);
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.8rem;
+  text-shadow: 0 1px 3px var(--shadow-light);
+}
+
+/* Quiz questions */
+.quiz-question {
+  margin-bottom: 1.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  user-select: none;
+}
+
+.quiz-question > div:first-child {
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--accent);
+}
+
+/* Quiz options */
+.quiz-options label {
+  display: block;
+  margin-bottom: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  user-select: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #987654;
+}
+
+
+.quiz-options label:hover,
+.quiz-options input[type="radio"]:focus + label,
+.quiz-options input[type="radio"]:checked + label {
+  background-color: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 4px 12px var(--accent);
+  font-weight: 700;
+  outline: none;
+}
+
+
+/* Hide native radio buttons */
+.quiz-options input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Quiz result */
+.quiz-result {
+  background-color: var(--accent);
+  color: var(--bg);
+  border-radius: 14px;
+  padding: 1.2rem 1.8rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 15px var(--accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  user-select: text;
+  text-align: center;
+}
+
+/* Quiz action buttons */
+.quiz-actions {
+  margin-top: 1.8rem;
+}
+
+.quiz-actions button {
+  background-color: var(--button-bg);
+  color: var(--button-tx);
+  border: none;
+  border-radius: 12px;
+  padding: 0.85rem 2.2rem;
+  margin-right: 1.2rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 15px var(--shadow-light);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.quiz-actions button:last-child {
+  margin-right: 0;
+  background-color: #444a7a;
+  color: var(--text);
+  box-shadow: 0 4px 12px #0008;
+}
+
+.quiz-actions button:hover {
+  background-color: var(--secondary);
+  color: #fff;
+  box-shadow: 0 8px 20px var(--accent);
+}
+
+.quiz-actions button:last-child:hover {
+  background-color: #5a5f8f;
+  box-shadow: 0 6px 18px #23e3bcaa;
+}
+
+/* Finder form */
+.finder-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 460px;
+}
+
+.finder-form label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text);
+  user-select: none;
+}
+
+.finder-form select {
+  background-color: var(--input-bg);
+  color: var(--input-tx);
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.finder-form select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.finder-form button {
+  background-color: var(--button-bg);
+  color: var(--button-tx);
+  border: none;
+  border-radius: 14px;
+  padding: 0.85rem 2.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: fit-content;
+  align-self: flex-start;
+  box-shadow: 0 6px 15px var(--shadow-light);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.finder-form button:hover {
+  background-color: var(--secondary);
+  color: #fff;
+  box-shadow: 0 8px 20px var(--accent);
+}
+
+/* Finder results */
+.finder-results {
+  margin-top: 2rem;
+  background-color: #262853;
+  border-radius: 16px;
+  color:  #ffffff;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 6px 20px var(--shadow-dark);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  user-select: text;
+}
+
+.finder-degree {
+  margin-bottom: 1.2em;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.2em;
+  letter-spacing: 0.03em;
+}
+
+.finder-colleges {
+  margin-left: 1.3em;
+  list-style-type: disc;
+}
+
+.finder-colleges li {
+  margin-bottom: 0.6em;
+}
+
+/* Responsive */
+@media (max-width: 730px) {
+  section {
+    padding: 1.5rem 1.8rem;
+  }
+
+  .finder-form {
+    width: 100%;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: var(--card);
+  padding: 1.2rem 1rem;
+  color: var(--muted);
+  text-align: center;
+  border-radius: 22px 22px 0 0;
+  font-size: 1rem;
+  margin-top: 3rem;
+  user-select: none;
+  letter-spacing: 0.1em;
+}

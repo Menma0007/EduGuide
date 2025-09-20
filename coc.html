@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Course to Career Maps | EduGuide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+  --primary: #6b4226;
+  --secondary: #8d6e63;
+  --accent: #d97706;
+  --bg: #fdfaf6;
+  --card: #fff8f0;
+  --text: #2e2a27;
+  --muted: #7a6f67;
+  --button-bg: var(--accent);
+  --button-tx: #fff;
+  --input-bg: var(--card);
+  --input-tx: var(--text);
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-dark: rgba(0, 0, 0, 0.18);
+    }
+    html, body {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      transition: background 0.4s, color 0.4s;
+    }
+    header {
+      padding: 2.2rem 1rem 2rem 1rem;
+      background: linear-gradient(120deg, var(--secondary), var(--primary));
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 4px 12px #1112;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+    }
+    header h1 {
+      font-size: 2.6rem;
+      letter-spacing: 1px;
+      margin: 0 0 0.5rem 0;
+    }
+    header p {
+      margin: 0;
+      font-size: 1.18rem;
+      color: #eaeaea;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 4px 32px #24254825;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: background 0.3s;
+    }
+    h2 {
+      color: var(--primary);
+      margin-top: 0;
+      margin-bottom: 1.6rem;
+      font-size: 2rem;
+    }
+    .career-map {
+      display: grid;
+      gap: 1.6rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .card {
+      background: #fff8f0;
+      border-radius: 16px;
+      padding: 1.5rem 1.3rem;
+      box-shadow: 0 2px 8px #0005;
+      display: flex;
+      flex-direction: column;
+      color: var(--text);
+      border: 1.5px solid var(--primary);
+      transition: border 0.3s, background 0.3s;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      background: #f8f8ff ;
+    }
+    .card h3 {
+      margin: 0 0 .6rem 0;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+    .card ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      list-style-type: disc;
+    }
+    .card ul li {
+      margin-bottom: 0.5rem;
+    }
+    .card-section-title {
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 0.8rem;
+      margin-bottom: 0.4rem;
+      border-bottom: 1px solid var(--primary);
+      padding-bottom: 0.3rem;
+      font-size: 1.05rem;
+    }
+    .backlink {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      background: #262853;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 6px #0002;
+      transition: background 0.2s;
+    }
+    .backlink:hover {
+      background: var(--accent);
+      color: #272862;
+      text-decoration: none;
+    }
+    footer {
+      background: var(--card);
+      padding: 1.2rem 1rem;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.08em;
+      margin-top: 3rem;
+      border-radius: 18px 18px 0 0;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EduGuide</h1>
+    <p>Course-to-Career Path Maps</p>
+  </header>
+  <div class="container">
+    <a class="backlink" href="index.html">&larr; Back to Home</a>
+    <section>
+      <h2>Visualize Your Future Career Path</h2>
+      <div class="career-map">
+        <div class="card">
+          <h3>B.A. (Arts)</h3>
+          <div class="card-section-title">Job Opportunities</div>
+          <ul>
+            <li>Social Worker</li>
+            <li>Content Writer</li>
+            <li>Journalist</li>
+            <li>Teacher</li>
+          </ul>
+          <div class="card-section-title">Higher Studies</div>
+          <ul>
+            <li>M.A. in Humanities</li>
+            <li>Mass Communication</li>
+            <li>Law (LLB, LLM)</li>
+            <li>Public Administration</li>
+          </ul>
+          <div class="card-section-title">Skills & Certifications</div>
+          <ul>
+            <li>Communication Skills</li>
+            <li>Creative Writing</li>
+            <li>Journalism Certifications</li>
+            <li>Project Management</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>B.Sc. (Science)</h3>
+          <div class="card-section-title">Job Opportunities</div>
+          <ul>
+            <li>Research Scientist</li>
+            <li>Software Developer</li>
+            <li>Lab Technician</li>
+            <li>Data Analyst</li>
+          </ul>
+          <div class="card-section-title">Higher Studies</div>
+          <ul>
+            <li>M.Sc. in Sciences</li>
+            <li>Engineering (M.Tech)</li>
+            <li>Medical Studies</li>
+            <li>Environmental Science</li>
+          </ul>
+          <div class="card-section-title">Skills & Certifications</div>
+          <ul>
+            <li>Data Analysis</li>
+            <li>Programming Languages (Python, R)</li>
+            <li>Scientific Research</li>
+            <li>Laboratory Techniques</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>B.Com. (Commerce)</h3>
+          <div class="card-section-title">Job Opportunities</div>
+          <ul>
+            <li>Accountant</li>
+            <li>Business Analyst</li>
+            <li>Financial Advisor</li>
+            <li>Tax Consultant</li>
+          </ul>
+          <div class="card-section-title">Higher Studies</div>
+          <ul>
+            <li>M.Com</li>
+            <li>MBA</li>
+            <li>Chartered Accountancy (CA)</li>
+            <li>Company Secretary (CS)</li>
+          </ul>
+          <div class="card-section-title">Skills & Certifications</div>
+          <ul>
+            <li>Financial Modelling</li>
+            <li>Tax Laws</li>
+            <li>Audit and Compliance</li>
+            <li>Excel & Accounting Software</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>B.Voc (Vocational)</h3>
+          <div class="card-section-title">Job Opportunities</div>
+          <ul>
+            <li>Hotel Manager</li>
+            <li>Healthcare Technician</li>
+            <li>Retail Manager</li>
+            <li>Web Designer</li>
+          </ul>
+          <div class="card-section-title">Higher Studies</div>
+          <ul>
+            <li>Postgrad in Hospitality</li>
+            <li>Healthcare Administration</li>
+            <li>Entrepreneurship Programs</li>
+            <li>Advanced IT Certifications</li>
+          </ul>
+          <div class="card-section-title">Skills & Certifications</div>
+          <ul>
+            <li>Customer Service Skills</li>
+            <li>Health & Safety Training</li>
+            <li>Retail Management</li>
+            <li>Web Development</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>
+    EduGuide © 2025 | For Students. For the Future.
+  </footer>
+</body>
+</html>
